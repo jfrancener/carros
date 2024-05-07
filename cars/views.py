@@ -6,6 +6,12 @@ from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
   
+class HomeView(CreateView):
+    model = Car
+    form_class = CarModelForm
+    template_name = 'new_car.html'
+    success_url = '/carros/'
+
 class CarsView(ListView):
     model = Car
     template_name = 'cars.html'
